@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Map Camera Tag Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-location-dot animated-icon"></i>
+                <h1>GeoTag<span>Studio</span></h1>
+            </div>
+            <p>Generate high-quality GPS map camera overlays instantly</p>
+        </header>
+
+        <main class="main-content">
+            <section class="control-panel">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-image"></i>
+                        <h2>Media Upload</h2>
+                    </div>
+                    
+                    <div class="upload-group">
+                        <label class="custom-upload-btn">
+                            <input type="file" id="mainImageInput" accept="image/*" required>
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span>Upload Main Image</span>
+                        </label>
+                        
+                        <label class="custom-upload-btn secondary">
+                            <input type="file" id="mapImageInput" accept="image/*" required>
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Upload Map Image</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-sliders"></i>
+                        <h2>Tag Variables</h2>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="input-box full-width">
+                            <label for="varLocation">Location Name</label>
+                            <input type="text" id="varLocation" value="Kulunda, Odisha, India">
+                        </div>
+                        <div class="input-box">
+                            <label for="varPlusCode">Plus Code</label>
+                            <input type="text" id="varPlusCode" value="8qvj+fpx">
+                        </div>
+                        <div class="input-box">
+                            <label for="varPinCode">Address / PIN Code</label>
+                            <input type="text" id="varPinCode" value="Kulunda, Odisha 768027, India">
+                        </div>
+                        <div class="input-box">
+                            <label for="varLat">Latitude (Lat)</label>
+                            <input type="text" id="varLat" value="21.343742°">
+                        </div>
+                        <div class="input-box">
+                            <label for="varLong">Longitude (Long)</label>
+                            <input type="text" id="varLong" value="83.781904°">
+                        </div>
+                        <div class="input-box">
+                            <label for="varDate">Day & Date</label>
+                            <input type="text" id="varDate" value="Sunday, 07/06/2026">
+                        </div>
+                        <div class="input-box">
+                            <label for="varTime">Time & GMT</label>
+                            <input type="text" id="varTime" value="10:16 AM GMT +05:30">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="downloadBtn" class="primary-btn">
+                    <i class="fa-solid fa-download"></i> Download High-Res Image
+                </button>
+            </section>
+
+            <section class="preview-panel">
+                <div class="sticky-preview">
+                    <h3>Live Preview</h3>
+                    <div class="canvas-wrapper">
+                        <canvas id="previewCanvas"></canvas>
+                        <div id="canvasPlaceholder" class="placeholder">
+                            <i class="fa-regular fa-images"></i>
+                            <p>Upload a main image to see the live preview</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
